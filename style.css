@@ -188,10 +188,12 @@ datalist {
   }
   .section-one {
     width: 21.875rem;
+    border-radius:  .625rem 6.25rem .625rem .625rem;
     margin: 0;
   }
   .section-two {
     width: 33.75rem;
+    margin-top: 3rem;
   }
   .range {
     padding: 2.5rem 2.5rem 2rem;
