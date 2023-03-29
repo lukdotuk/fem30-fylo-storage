@@ -1,0 +1,219 @@
+/* -------------------- */
+/* custom properties    */
+/* -------------------- */
+
+:root {
+  /* colors */
+  --clr-natural-050: hsl(0, 0%, 100%);
+  --clr-neutral-100: hsl(243, 100%, 93%);
+  --clr-neutral-200: hsl(229, 7%, 55%);
+  --clr-neutral-300: hsl(228, 56%, 26%);
+  --clr-neutral-400: hsl(229, 57%, 11%);
+
+  --clr-gr: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+
+  /* font sizes */
+  --fs-400: .75rem;
+  --fs-450: .875rem;
+  --fs-500: 2.5rem;
+
+  /* font family */
+  --ff-sans: 'Raleway', sans-serif;
+
+}
+
+/* -------------------- */
+/* Reset                */
+/* -------------------- */
+
+/* box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* margin reset */
+body,
+h1,
+h2,
+p {
+  margin: 0;
+}
+/* set up body */
+body {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-400);
+  font-weight: 400;
+  color: var(--clr-neutral-100);
+  min-height: 100vh;
+}
+
+/* -------------------- */
+/* components           */
+/* -------------------- */
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  min-height: 100vh;
+  flex-direction: column;
+  background: url(./assets/images/bg-mobile.png);
+  background-size: cover;
+  padding: 7.9375rem 0 9.9375rem;
+}
+.section-one {
+  width: 86.934%;
+  background: var(--clr-neutral-300);
+  border-top-right-radius: 6.25rem;
+  padding: 2.5rem;
+  margin-bottom: 1rem;
+}
+.logo {
+  margin-bottom: 1.875rem;
+}
+.icons {
+  gap: 1rem;
+  justify-content: flex-start;
+}
+.icons > * {
+  cursor: pointer;
+}
+.icon-background {
+  width: 3rem;
+  height: 3rem;
+  border-radius: .625rem;
+  background: var(--clr-neutral-400);
+}
+.section-two {
+  width: 86.934%;
+  position: relative;
+}
+.range {
+  text-align: center;
+  border-radius: 10px;
+  background: var(--clr-neutral-300);
+  padding: 2rem 2rem 3.25rem;
+}
+.range__head {
+  font-size: var(--fs-400);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.range__input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 1.0625rem;
+  border: 3px solid var(--clr-neutral-400);
+  border-radius: 5rem;
+  margin-bottom: .625rem;
+  background: var(--clr-neutral-400);
+  background-image: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  background-size: 80% 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+datalist {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-400);
+  width: 100%;
+}
+.range__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: .625rem;
+  height: .625rem;
+  border-radius: 50%;
+  border: 1px solid hsl(335, 100%, 65%);
+  background: var(--clr-natural-050);
+  margin-top: -10.25px;
+}
+.range__input::-moz-range-thumb {
+  -moz-appearance: none;
+  width: .625rem;
+  height: .625rem;
+  border: 1px solid hsl(335, 100%, 65%);
+  background: var(--clr-natural-050);
+}
+.info {
+  position: absolute;
+  top: 7.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: .5625rem;
+  width: 11.2rem;
+  font-weight: 700;
+  color: var(--clr-neutral-400);
+  border-radius: .625rem;
+  background: var(--clr-natural-050);
+  padding: 1rem 1.5rem;
+}
+.info__text-one {
+  font-size: var(--fs-500);
+  color: var(--clr-neutral-400);
+}
+.info__text-two {
+  font-size: var(--fs-400);
+  opacity: .5;
+}
+#value-used {
+  font-weight: 900;
+}
+
+.icons > *:hover {
+  filter: brightness(1.5);
+  box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.5);
+}
+
+
+@media (min-width: 25rem) {
+  .main {
+    background: url(./assets/images/bg-desktop.png);
+    background-color: var(--clr-neutral-400);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 60rem) {
+  .main {
+    flex-direction: row;
+    gap: 1.875rem;
+    background: url(./assets/images/bg-desktop.png);
+    background-color: var(--clr-neutral-400);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+  }
+  .section-one {
+    width: 21.875rem;
+    margin: 0;
+  }
+  .section-two {
+    width: 33.75rem;
+  }
+  .range {
+    padding: 2.5rem 2.5rem 2rem;
+  }
+  .range__head {
+    font-size: var(--fs-450);
+    text-align: left;
+  }
+  .info {
+    position: absolute;
+    top: -2.95rem;
+    left: 25.75rem;
+  }
+  .info:after {
+    content: "";
+    position: absolute;
+    top: 3.5rem;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 1.375rem solid transparent;
+    border-bottom: 1.375rem solid transparent;
+    border-right: 1.375rem solid var(--clr-natural-050);
+  }
+}

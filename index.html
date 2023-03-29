@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Fylo data storage component</title>
+</head>
+<body onload="reset()">
+
+  <main class="main flex">
+
+    <div class="section-one">
+      <img class="logo" src="./assets/images/logo.svg" alt="fylo logo">
+      <div  class="icons flex">
+        <div class="icon-background flex">
+          <img src="./assets/images/icon-document.svg" alt="document icon">
+        </div>
+        <div class="icon-background flex">
+          <img src="./assets/images/icon-folder.svg" alt="folder icon">
+        </div>
+        <div class="icon-background flex">
+          <img src="./assets/images/icon-upload.svg" alt="upload icon">
+        </div>
+      </div>
+    </div>
+
+    <div class="section-two">
+      <div class="range">
+        <h1 class="range__head" >You've used <span id="value-used">815 GB</span> of your storage</h1>
+        
+        <input class="range__input" type="range" min="0" max="1000" value="75" 
+          list="values" name="" id="range__input">
+        <datalist id="values">
+          <option label="0 GB"></option>
+          <option label="1000 GB"></option>
+        </datalist>
+      </div>
+      <div class="info flex">
+        <p class="info__text-one" id="value-left">185</p>
+        <p class="info__text-two"> GB Left</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let inputValue = document.getElementById("range__input"),
+        valueOutputLeft = document.getElementById("value-left"),
+        valueOutputUsed = document.getElementById("value-used");
+
+  function reset() {
+    inputValue.value = 815;
+  }
+
+  inputValue.addEventListener("input", () => {
+    const min = inputValue.min,
+          max = inputValue.max,
+          val = inputValue.value;
+    valueOutputLeft.innerHTML = max - val;
+    valueOutputUsed.innerHTML = val;
+    inputValue.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%'
+  })
+
+  </script>
+</body>
+</html>
